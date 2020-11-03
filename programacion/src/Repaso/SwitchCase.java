@@ -25,19 +25,19 @@ public class SwitchCase {
 
             case 1: 
 
-                System.out.println("Lunes"); 
+                System.out.println("Domingo"); 
 
             break; 
 
             case 2: 
 
-                System.out.println("Martes"); 
+                System.out.println("Sabado"); 
 
                 break; 
 
             case 3: 
 
-                System.out.println("Miercoles"); 
+                System.out.println("Viernes"); 
 
                 break; 
 
@@ -49,19 +49,19 @@ public class SwitchCase {
 
             case 5: 
 
-                System.out.println("Viernes"); 
+                System.out.println("Miercoles"); 
 
                 break; 
 
                 case 6: 
 
-                    System.out.println("Sabado"); 
+                    System.out.println("Martes"); 
 
                     break; 
 
                 case 7: 
 
-                    System.out.println("Domingo"); 
+                    System.out.println("Lunes"); 
 
                     break; 
 
