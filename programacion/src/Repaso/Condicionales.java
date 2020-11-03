@@ -21,7 +21,7 @@ public class Condicionales {
 
         int numero = 23; 
 
-         
+         //Cambio para el BugFix
 
         if (numero%2==0) { 
 
