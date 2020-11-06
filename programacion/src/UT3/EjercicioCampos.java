@@ -28,9 +28,9 @@ public class EjercicioCampos {
 		 while (salir==0) {
 
 		 System.out.println("Por favor introduzca los metros cuadrados");
-		 metros=entrada.nextInt();
+		 metros=sc.nextInt();
 		 System.out.println("Por favor introduce los campos de futbol");
-		 campos=entrada.nextInt();
+		 campos=sc.nextInt();
 
 		 div=metros/campos;
 
@@ -45,7 +45,7 @@ public class EjercicioCampos {
 		 System.out.println("NO");
 		 }
 		 System.out.println("por favor pulsa numero distinto a 0 para salir");
-		 salir=entrada.nextInt();
+		 salir=sc.nextInt();
 
 		 }
 

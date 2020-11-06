@@ -3,6 +3,8 @@
  */
 package Repaso;
 
+import java.util.Scanner;
+
 /**
  * @author david
  *

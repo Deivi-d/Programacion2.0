@@ -1,7 +1,7 @@
 /**
  * 
  */
-package UT3;
+package UT4;
 
 import java.util.Scanner;
 
@@ -37,7 +37,8 @@ public class Ejercicio16 {
 
          
 
-        System.out.print(i + " "); 
+       
+		System.out.print( intervalo + " "); 
 
          
 
