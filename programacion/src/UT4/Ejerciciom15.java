@@ -65,7 +65,8 @@ public class Ejerciciom15 {
 
             System.out.printf("%d X %d = %d \n", numero1, contador, numero1*contador); 
             
-            sc.close();
+            					
+            								sc.close();
 
         } 
 

@@ -24,7 +24,7 @@ public class tela_araña {
 	
 		while (tela != 0) {
 
-			System.out.println("inserta un numero para la tela de araña");
+			System.out.println("Inserta un numero para la tela de araña");
 			tela = sc.nextInt();
 			int contador = 1;	
 			
@@ -36,13 +36,12 @@ public class tela_araña {
 				pesoacumulado = pesoacumulado + elefante;
 			}
 			if (pesoacumulado >= tela) {
-				System.out.println("Se ha roto");
+				System.out.println("¡ups! La tela de araña se ha roto");
 			}	
 			else {
-				System.out.println("Ha aguantado");
+				System.out.println("La tela resiste el peso de los elefantes");
 			}
-			pesoacumulado = 0; // Reset, se acumulaban antes. 
-			elefante = 1; //Todo parece necesitar reset para funcionar.
+			pesoacumulado = 0; 
 		}
 						sc.close();
 	}

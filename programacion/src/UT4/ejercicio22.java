@@ -53,11 +53,11 @@ public class ejercicio22 {
 
          
 
-        System.out.printf("El calculo es %d",numero); 
+        		System.out.printf("El calculo es %d",numero); 
 
          
 
-        scn.close(); 
+        					scn.close(); 
 
   
 

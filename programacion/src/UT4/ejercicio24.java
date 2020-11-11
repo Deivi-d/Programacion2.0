@@ -51,9 +51,9 @@ public class ejercicio24 {
 
 	        System.out.println("La suma de los números pares es "+suma); 
 	  
-
+	        	
 	    } 
-
+								
 	
 }
 
