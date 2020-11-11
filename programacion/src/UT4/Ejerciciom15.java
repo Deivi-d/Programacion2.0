@@ -64,12 +64,13 @@ public class Ejerciciom15 {
         for(contador = 1; contador<=10; contador++) { 
 
             System.out.printf("%d X %d = %d \n", numero1, contador, numero1*contador); 
+            
+            sc.close();
 
         } 
 
          
-
-         
+        
 
     } 
 
