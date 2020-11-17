@@ -29,13 +29,13 @@ public class ejercicio22 {
 
         System.out.println("Escribe la base a calcular:"); 
 
-        Scanner scn=new Scanner(System.in); 
+        Scanner sc=new Scanner(System.in); 
 
-        numero=scn.nextInt(); 
+        numero=sc.nextInt(); 
 
         System.out.println("Escribe la potencia a calcular:"); 
 
-        multiplo=scn.nextInt(); 
+        multiplo=sc.nextInt(); 
 
          
 
