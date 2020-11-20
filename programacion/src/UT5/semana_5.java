@@ -29,7 +29,7 @@ public class semana_5 {
 			for(numeros=0;numeros<13;numeros++) {
 				
 				System.out.println("Por favor deme 4 cartas");
-				
+				//cambio para gitbub
 					cartas = sc.nextInt();
 			}
 		}
