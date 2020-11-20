@@ -17,71 +17,73 @@ public class ejercicio65 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			
-		/* Leer por teclado una serie de 10 números enteros. La aplicación debe indicarnos si los números están
+/* Leer por teclado una serie de 10 números enteros. La aplicación debe indicarnos si los números están
 		 ordenados de forma creciente, decreciente, o si están desordenados*/
 		
-		Scanner sc = new Scanner(System.in);
-			
-		int enteros[];
-		enteros = new int[10];
-		boolean creciente;
-		boolean decreciente;
+        Scanner sc = new Scanner(System.in); 
 
-		
-		
-		for (int i=0; i<enteros.length; i++) {
-			
-			System.out.println("Introduce el numero:" );
-			enteros[i]= sc.nextInt();
-			
-		}
-		// determinar si está ordenado de forma creciente 
-		
-			creciente = true;
-			decreciente = true;
-			
-			for (int i = 1; i < enteros.length - i;) {
-				
-				for(int j = 0; j<enteros.length - i; j++) {
-					
-					
-					if (enteros[j]>enteros[j + 1]) {
-						
-						creciente=false;
-						
-					}	
-					
-					if (enteros[j] < enteros[j + 1]) {
-						
-						decreciente = false;	
-						
-					}
-				
+        	int numeros[]; 
 
+        	int i; 
 
-					
-						}
-				
-				
-					}
-		
-		  if(creciente) {
-			  
-			  System.out.println("Los numeros introducidos estan ordenados de forma creciente");
-			  
-		  }
-		  
-		  if (decreciente) {
-			  
-			  System.out.println("Los numeros estan ordenados de forma decreciente");
-		  }
-		  
-		  if (!(decreciente) || creciente) {
-			  
-			  System.out.println("Los numeros introducidos estan deserdenados");
-		  }
-		
-		  		sc.close();
-	}
-		
-}
+        	numeros = new int [10]; 
+
+        	boolean creciente = false; 
+
+        	boolean decreciente = false; 
+
+          
+
+// leemos los números 
+
+             System.out.println("Introduce el numero"); 
+
+             	for (i=0;i<10;i++){ 
+
+             		System.out.print( +i); 
+
+             		numeros[i]= sc.nextInt(); 
+
+         } 
+
+  
+
+// comprobamos el orden 
+
+         for (i=0;i<9;i++){   				// usamos i e i+1, por lo que la i solo podrá llegar hasta 8 o < 9 
+               
+             if (numeros[i] > numeros[i+1]) //  es decreciente 
+
+                 decreciente = true; 
+
+             if (numeros[i] < numeros[i+1]) // es creciente 
+
+                 creciente = true; 
+
+         } 
+
+// dependiendo de los valores daremos un tipo de orden 
+
+         if (creciente ==true && decreciente ==false) //toda l están en orden creciente 
+
+             System.out.println("Serie creciente."); 
+
+         if (creciente ==false && decreciente ==true) // todas  están en orden decreciente 
+
+             System.out.println("Serie decreciente."); 
+
+         if (creciente ==true && decreciente ==true) //  ha tenido momentos creciente y decrecientes 
+
+             System.out.println("Serie desordenada."); 
+
+         if (creciente ==false && decreciente ==false) // son todos iguales 
+
+             System.out.println("Todos los números iguales.");  
+
+         } 
+
+         
+
+  
+
+    } 
