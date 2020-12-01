@@ -26,6 +26,8 @@ public class ejercicio37 {
 		System.out.println("escribe numero de columnas");
 		columnas=sc.nextInt();
 		
+		//prueba github 
+		
 //		filas=3, columnas= 5
 //		* * * * *
 //		* * * * *
