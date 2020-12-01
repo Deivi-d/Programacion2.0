@@ -19,7 +19,7 @@ public class proyecto_primertrimestre {
 		//Añadimos las minas de forma aleatoria para cada tablero, con un minimo de 25 y un maximo de 50.	
 		int numeroMinas = (int) Math.floor(Math.random()*(25-50+1)+50);
 		//System.out.println(numeroMinas);
-		//Creamosun contador para guardar cuantos espacios en blanco tienen 6 minas alrrededor.
+		//Creamos un contador para guardar cuantos espacios en blanco tienen 6 minas alrrededor.
 		int contadorEspaciosConSeisMinas = 0;
 		//Creamos un tablero de tamaño variable con un minemos de 7 y un maximo de 14.
 		int ejexTablero =  (int) Math.floor(Math.random()*(7-14+1)+14);
@@ -40,6 +40,7 @@ public class proyecto_primertrimestre {
 		//System.out.println("se ha creado la mina con posicion x "+ (ejex+1) + " y " + (ejey+1));
 		arrayMinas[i][0] = ejex;
 		arrayMinas[i][1] = ejey;
+		
 		//arrayMinas[i].setY(ejey);
 	//Si no se mira que no esista una mina con la misma posición, si ya existe se resta una a i y no se guarda la actual mina para evitar generar duplicidades
 			}else {
