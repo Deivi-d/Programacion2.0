@@ -15,6 +15,7 @@ package UT620;
 	
 	//Constructor...
 	public Persona(String nombre, String apellidos, int anio, int mes, int dia, char sexo) {
+		System.out.println(nombre + "esta vacio");
 		setNombre(nombre);
 		setApellidos(apellidos);
 		setAnio(anio);
@@ -51,12 +52,17 @@ package UT620;
 	
 	public void setNombre(String nombre) {
 		//Convierto el nombre a palabra con la primera en mayusculas
+		if(nombre=="") {
+			nombre = " Sin identificar ";
+		}else {
 		nombre = convertirNombresPropios(nombre);
 		
-		//Si es menor que 4, uso sin especificar
-		if(nombre.length() < 4 )
-			nombre="Sin especificar";
+		//Si es menor que 4 o el nombre esta vacio, uso sin especificar
+		if(nombre.length() < 4  )
+			nombre="Sin especificar ";
 		
+	
+		}
 		this.nombre = nombre;
 	}
 	
