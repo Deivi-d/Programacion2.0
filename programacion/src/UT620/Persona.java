@@ -1,6 +1,5 @@
 package UT620;
-import java.util.Date;
-public class Persona {
+ class Persona {
 	//Atributos de la clase privados, no accesibles desde fuera de la clase
 	private String nombre;
 	private String apellidos;
@@ -108,8 +107,8 @@ public class Persona {
 	}
 	
 	//TODO cambiar para que no pinte en consola desde la clase Persona
-	public void saludar() {
-		System.out.printf("Hola soy %s %s y naci el %d/%d/%d. \n", nombre, apellidos, diaNacimiento, mesNacimiento, anioNacimiento);
+	public String saludar() {
+		return ("Hola soy " + getNombre() + "" + getApellidos() + "y naci el " + getDiaNacimiento() + "/" + getMesNacimiento() + "/" + getAnioNacimiento() + "\n");
 	}
 	
 	private String toUpperPrimeraLetra(String palabra) {

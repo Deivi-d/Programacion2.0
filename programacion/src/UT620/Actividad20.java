@@ -14,26 +14,27 @@ public class Actividad20 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//¡COMENTO LOS SYSTEM PORQUE NO SE SI HAY QUE PINTARLOS!
 		Persona usuario = new Persona();
 		usuario.setNombre("David");
-		System.out.println(usuario .getNombre());
+		//System.out.println(usuario .getNombre());
 		usuario.setApellidos("Sánchez-camacho Aldana");
-		System.out.println(usuario.getApellidos());
+		//System.out.println(usuario.getApellidos());
 		usuario.setAnio(1999);
-		System.out.println(usuario.getAnioNacimiento());
+		//System.out.println(usuario.getAnioNacimiento());
 		usuario.setMes(7);
-		System.out.println(usuario.getMesNacimiento());
+		//System.out.println(usuario.getMesNacimiento());
 		usuario.setDia(6);
-		System.out.println(usuario.getDiaNacimiento());
+		//System.out.println(usuario.getDiaNacimiento());
 		usuario.setSexo('H');
-		System.out.println(usuario.getSexo());
-		
+		//System.out.println(usuario.getSexo());
 		usuario.saludar();
+		System.out.println(usuario.saludar());
 		System.out.println(usuario.mostrarEdad());
 		
-		Persona invento = new Persona("PEPE", "lopez garcia", 8000, 34, -3, 'G');
-		invento.saludar();
+		
+		//Persona invento = new Persona("PEPE", "lopez garcia", 8000, 34, -3, 'G');
+		//invento.saludar();
 	}
 	
 
