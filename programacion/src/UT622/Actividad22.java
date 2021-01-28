@@ -3,7 +3,7 @@
  */
 package UT622;
 
-import java.util.Scanner;
+
 
 /**
  * @author david
@@ -17,13 +17,11 @@ public class Actividad22 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Scanner sc = new Scanner(System.in);
-		String titulo, autor;
-		int ejemplares;
+
 
 		// creo el objeto libro1 utilizando el constructor con parametros
 
-		Libro libro1 = new Libro("la casa de la pradera", "Chiquito de la Calzada", 11, 9);
+		Libro libro1 = new Libro("la casa de la pradera", "Chiquito de la Calzada", 10, 9);
 
 		// creo el objeto libro2 utilizando el constructor con parametros
 		Libro libro2 = new Libro("el utlimo mohicano", "Kiko Rivera", 5, 4);
