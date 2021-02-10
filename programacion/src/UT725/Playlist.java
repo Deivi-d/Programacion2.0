@@ -41,71 +41,90 @@ public class Playlist {
 	}
 
 	// metodos de la clase playlist
-
+	// metodo para añadir una cancion al arraylist que devuelve una cancion
 	public void anyadirCancion(Cancion c) {
 
 		canciones.add(c);
 
 	}
 
+	// metodo para obtener la posicion de una cancion y devuelve la cancion que esta
+	// en dicha posicion
 	public Cancion obtieneCancion(int posicion) {
 		return canciones.get(posicion);
 
 	}
 
+	// metodo para obtener el total de la arraylist(Playlist) y devuelve un numero
+	// entero.
 	public int obtieneTotalCanciones() {
 
 		return canciones.size();
 
 	}
 
+	// desde la clase main pinta el nombre que hemos puesto a nuestra playlist
 	public void mostrarPlaylist() {
 
 	}
 
-	public int totalDuracionPlaylist() {
-		int suma = 0;
+	// hacemos una suma de todos los minutos de cada cancion y devolvemos el total
+	// de la suma
+	public float totalDuracionPlaylist() {
+		float suma = 0;
 		for (Cancion c : canciones)
-			suma = (int) (suma + c.getDuracionMinutos());
+			suma = (suma + c.getDuracionMinutos());
 
 		return suma;
 
 	}
 
-	public void reproducirPlaylist() {
-		Cancion c;
-		if (canciones.size() != 0) {
-			for (int i = 0; i < canciones.size(); i++) {
-				c = canciones.get(i);
-			}
+	// metodo para reproducir toda la playlist inicializamos a 0 que seria la
+	// primera cancion e incrementamos
+	public String reproducirPlaylist() {
+		String respuesta = " ";
+		for (int i = 0; i < canciones.size(); i++) {
+			respuesta = respuesta + canciones.get(i).reproducir();
 
 		}
+		return respuesta;
 	}
 
-	public void reproducirCancion(int posicion) {
-
+	public Cancion reproducirCancion(int posicion) {
+		return canciones.get(posicion);
 	}
 
+	// metodo para borrar todo lo que hay dentro del arraylist(canciones de la
+	// Playlist)
 	public void limpiarPlaylist() {
 		canciones.clear();
 	}
 
 	public boolean eliminarCancion(int posicion) {
 		if (posicion >= 0 && posicion < canciones.size()) {
-			canciones.remove(3);
-			return true;
-		} else {
+			canciones.remove(posicion);
 
-			return false;
-		}
+		} else
+			;
+		return false;
 
 	}
 
 	public String encontrarCancionPorTitulo(String nombre) {
-
-		return nombre;
-
-	}
+		int posicioncancion=-1;
+		String busqueda;
+		for (int i = 0; i < canciones.size(); i++) {
+			if(canciones.get(i).equals(nombre));
+			posicioncancion = i;
+			
+		}if(posicioncancion==-1){
+			busqueda = "La cancion no existe en la lista";
+		}else {
+			busqueda = "La cancion " + nombre + " Existe en la posicion: " + posicioncancion; 
+		}
+			return busqueda;
+		}
+		
 
 	public String encontrarCancionesPorArtista(String artista) {
 		return artista;

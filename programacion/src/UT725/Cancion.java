@@ -28,34 +28,36 @@ public class Cancion {
 
 	}
 
-	public void setTitulo(String Titulo) {
-
+	public void setTitulo(String titulo) {
+		this.Titulo = titulo;
 	}
 
 	public String getArtista() {
 		return Artista;
 	}
 
-	public void setArtista(String Artista) {
-
+	public void setArtista(String artista) {
+		this.Artista = artista;
 	}
 
 	public float getDuracionMinutos() {
 		return DuracionMinutos;
 	}
 
+	public void setDuracionMinutos(float duracionminutos) {
+		this.DuracionMinutos = duracionminutos;
+	}
+
 	// metodo toString sobrescrito para mostrar los datos de la clase cancion
 
 	public String toString() {
-		return "Titulo" + Titulo + "\n Artista" + Artista + "\n Duracion" + DuracionMinutos;
+		return this.getTitulo() + this.getArtista() + this.getDuracionMinutos();
 	}
 
-	// metodos para realizar el prestamos de un libro
-	
-	public boolean reproducir() {
-		return false;
-	
-		}
+	// metodos para realizar el prestamos de un
+
+	public String reproducir() {
+		return "Reproduciendo..." + Titulo;
+
 	}
-
-
+}

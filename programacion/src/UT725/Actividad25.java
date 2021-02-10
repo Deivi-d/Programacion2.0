@@ -17,15 +17,15 @@ public class Actividad25 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		Scanner sp = new Scanner(System.in);
 		Playlist miPlaylist = new Playlist("Playlist de David");
-		Cancion nuevaCancion = new Cancion("Get Lucky", "Daft Punk", 3);
-		Cancion nuevaCancion2 = new Cancion("Hawawai", "Maluma", 4);
-		System.out.println("Cancion 1:\n");
-		System.out.println("Titulo: " + nuevaCancion.getTitulo());
-		System.out.println("Artista: " + nuevaCancion.getArtista());
-		System.out.println("Duracion: " + nuevaCancion.getDuracionMinutos() + " minutos\n");
+		Cancion nuevaCancion = new Cancion();
+		// System.out.println("Cancion 1:\n");
+		// System.out.println("Titulo: " + nuevaCancion.getTitulo());
+		// System.out.println("Artista: " + nuevaCancion.getArtista());
+		// System.out.println("Duracion: " + nuevaCancion.getDuracionMinutos() + "
+		// minutos\n");
 
-		Scanner sc = new Scanner(System.in);
 		int menu = 12;
 
 		while (menu != 0) {
@@ -42,38 +42,70 @@ public class Actividad25 {
 			System.out.println("9.Pulsa '10' para encontrar cancion por titulo");
 			System.out.println("10.Pulsa '11' para encontrar cancion por artista");
 			System.out.println("12.Pulsa '0' para salir");
-			menu = sc.nextInt();
-			if (menu == 1) {
-				miPlaylist.anyadirCancion(nuevaCancion);
-				System.out.println("Perfecto, has añadido una nueva cancion a tu Playlist");
-			} else if (menu == 2) {
-				miPlaylist.obtieneCancion(2);
-				System.out.println("Aqui tienes la cancion que buscabas" + miPlaylist.obtieneCancion(0));
-			} else if (menu == 3) {
-				miPlaylist.obtieneTotalCanciones();
-			} else if (menu == 4) {
-				System.out.println("El nombre de la Playlist es: " + miPlaylist.getNombre() + "\n");
-			} else if (menu == 5) {
-				miPlaylist.totalDuracionPlaylist();
-				System.out.println("Tu Playlist dura: " + miPlaylist.totalDuracionPlaylist() + " minutos");
-			} else if (menu == 6) {
-				miPlaylist.reproducirPlaylist();
-				System.out.println();
-			} else if (menu == 7) {
 
-			} else if (menu == 8) {
-				miPlaylist.limpiarPlaylist();
-				System.out.println("Lista vacia");
+			while (menu != 0) {
+				menu = sp.nextInt();
+				switch (menu) {
 
-			} else if (menu == 9) {
-				int posicion = 3;
-				miPlaylist.eliminarCancion(posicion);
-			} else if (menu == 10) {
-				miPlaylist.encontrarCancionPorTitulo(null);
-			} else if (menu == 11) {
-				miPlaylist.encontrarCancionPorTitulo(null);
-			} else if (menu == 12) {
+				case 1:
+					Scanner sc = new Scanner(System.in);
+					Scanner sn = new Scanner(System.in);
+					System.out.println("Dime el titulo de la cancion");
+					nuevaCancion.setTitulo(sn.nextLine());
+					System.out.println("Dime el artista");
+					nuevaCancion.setArtista(sn.nextLine());
+					System.out.println("Por ultimo, dime cuanto dura la cancion");
+					nuevaCancion.setDuracionMinutos(sc.nextFloat());
+					miPlaylist.anyadirCancion(nuevaCancion);
+					System.out.println("Perfecto, has añadido una nueva cancion a tu Playlist");
+					break;
+				case 2:
+					Scanner se = new Scanner(System.in);
+					int posicion_cancion = se.nextInt();
+					System.out.println("Dime una posicion para poder encontrar una cancion");
+					posicion_cancion = se.nextInt();
+					System.out.println("Aqui tienes la cancion que buscabas" + miPlaylist.obtieneCancion(posicion_cancion));
+					break;
+				case 3:
+					System.out.println("Hay " + miPlaylist.obtieneTotalCanciones() + " en total");
+					break;
+				case 4:
+					System.out.println("El nombre de la Playlist es: " + miPlaylist.getNombre() + "\n");
+					break;
+				case 5:
+					System.out.println("Tu Playlist dura: " + miPlaylist.totalDuracionPlaylist() + " minutos");
+					break;
+				case 6:
 
+					System.out.println(miPlaylist.reproducirPlaylist());
+					break;
+				case 7:
+					miPlaylist.reproducirCancion(0);
+					break;
+
+				case 8:
+					miPlaylist.limpiarPlaylist();
+					System.out.println("Lista vacia");
+					break;
+				case 9:
+					Scanner sl = new Scanner(System.in);
+					System.out.println("Dime la posicion que quieres eliminar");
+					int posicion = sl.nextInt();
+					System.out.println("Ha eliminado la cancion de la posicion" + miPlaylist.eliminarCancion(posicion));
+					break;
+				case 10:
+					Scanner sm = new Scanner(System.in);
+					System.out.println("Dime el titulo de la cancion que deseas buscar");
+					String titulo_cancion = sm.next();
+					System.out.println(miPlaylist.encontrarCancionPorTitulo(titulo_cancion));
+					break;
+				case 11:
+					Scanner st = new Scanner(System.in);
+					String artista_cancion = st.next();
+					miPlaylist.encontrarCancionesPorArtista(artista_cancion);
+					break;
+
+				}
 			}
 		}
 	}
