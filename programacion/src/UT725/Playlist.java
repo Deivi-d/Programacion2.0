@@ -114,7 +114,7 @@ public class Playlist {
 		int posicioncancion=-1;
 		String busqueda;
 		for (int i = 0; i < canciones.size(); i++) {
-			if(canciones.get(i).equals(nombre));
+			if(canciones.);
 			posicioncancion = i;
 			
 		}if(posicioncancion==-1){
