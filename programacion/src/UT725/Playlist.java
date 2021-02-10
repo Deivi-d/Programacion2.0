@@ -13,13 +13,13 @@ public class Playlist {
 	// Constructor por defecto (vacio)
 
 	public Playlist() {
-		ArrayList<Cancion> canciones = new ArrayList<Cancion>();
+		canciones = new ArrayList<Cancion>();
 	}
 
 	// Constructor con parametros
 	public Playlist(String nombre) {
 		this.setNombre(nombre); // parametro nombre
-		ArrayList<Cancion> canciones = new ArrayList<Cancion>(); // inicializo arraylist
+		canciones = new ArrayList<Cancion>(); // inicializo arraylist
 
 		// getter y setters
 	}
@@ -42,28 +42,21 @@ public class Playlist {
 
 	// metodos de la clase playlist
 
-	public void anyadirCancion(String cancion) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Dime el nombre de la cancion");
-		String nombreCancion = sc.next();
-		System.out.println("Dime el artista o grupo");
-		String artista  = sc.next();
-		System.out.println("¿Cuantos minutos dura la cancion?");
-		int minutos = sc.nextInt();
-		canciones.add(new Cancion());
+	public void anyadirCancion(Cancion c) {
+
+		canciones.add(c);
 
 	}
 
-	public int obtieneCancion(int posicion) {
-		return posicion;
+	public Cancion obtieneCancion(int posicion) {
+		return canciones.get(posicion);
 
 	}
 
-	public ArrayList<Cancion> obtieneTotalCanciones() {
-		canciones.size();
-		System.out.println("Hay un total de " + canciones + " canciones en la Playlist");
-		return canciones;
-	
+	public int obtieneTotalCanciones() {
+
+		return canciones.size();
+
 	}
 
 	public void mostrarPlaylist() {
@@ -71,12 +64,22 @@ public class Playlist {
 	}
 
 	public int totalDuracionPlaylist() {
-		return 0;
+		int suma = 0;
+		for (Cancion c : canciones)
+			suma = (int) (suma + c.getDuracionMinutos());
+
+		return suma;
 
 	}
 
 	public void reproducirPlaylist() {
+		Cancion c;
+		if (canciones.size() != 0) {
+			for (int i = 0; i < canciones.size(); i++) {
+				c = canciones.get(i);
+			}
 
+		}
 	}
 
 	public void reproducirCancion(int posicion) {
@@ -84,15 +87,22 @@ public class Playlist {
 	}
 
 	public void limpiarPlaylist() {
-
+		canciones.clear();
 	}
 
 	public boolean eliminarCancion(int posicion) {
-		return false ;
+		if (posicion >= 0 && posicion < canciones.size()) {
+			canciones.remove(3);
+			return true;
+		} else {
+
+			return false;
+		}
 
 	}
 
 	public String encontrarCancionPorTitulo(String nombre) {
+
 		return nombre;
 
 	}

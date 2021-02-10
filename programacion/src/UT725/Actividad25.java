@@ -17,69 +17,64 @@ public class Actividad25 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Playlist miPlaylist = new Playlist("Playlist de David");
+		Cancion nuevaCancion = new Cancion("Get Lucky", "Daft Punk", 3);
+		Cancion nuevaCancion2 = new Cancion("Hawawai", "Maluma", 4);
+		System.out.println("Cancion 1:\n");
+		System.out.println("Titulo: " + nuevaCancion.getTitulo());
+		System.out.println("Artista: " + nuevaCancion.getArtista());
+		System.out.println("Duracion: " + nuevaCancion.getDuracionMinutos() + " minutos\n");
 
-		
 		Scanner sc = new Scanner(System.in);
-		int opcion = 0;
-		do {
-			System.out.println("Elige una opcion");
-			System.out.println("1. Escribe '1' para añadir una nueva cancion a tu Playlist");
-			System.out.println("2. Escribe '2' para buscar tu cancion");
-			System.out.println("3. Escribe '3' para consultar el numero de canciones en tu Playlist");
-			System.out.println("4. Escribe '4' para mostrar toda tu Playlist");
-			System.out.println("5. Escribe '5' para ver el total de minutos de tu Playlist");
-			System.out.println("6. Escribe '6' para comenzar a escucharla por completo");
-			System.out.println("7. Escribe '7' para escucharla");
-			System.out.println("8. Escribe '8' para borrar toda tu Playlist");
-			System.out.println("9.Escribe '9' para quitar una cancion de tu Playlist");
-			System.out.println("10. Escribe '10' para seleccionar una cancion por su titulo");
-			System.out.println("11. Escribe '11' para seleccionar una cancion por su autor");
-			System.out.println("12. Escribe 'salir' para salir");
-			opcion = sc.nextInt();
-			switch (opcion) {
-			case 1:
-				anyadirCancion();
-			case 2:
-				obtieneCancion();
-			case 3: 
-				obtieneTotalCanciones();
-			case 4: 
-				mostrarPlaylist();
-			case 5: 
-				totalDuracionPlaylist();
-			case 6: 
-				reproducirPlaylist();
-			case 7: 
-				reproducirCancion();
-			case 8: 
-				limpiaPlaylist();
-			case 9: 
-				eliminarCancion();
-			case 10: 
-				encontrarCancionPorTitulo();
-			case 11: 
-				encontrarCancionPorArtista();
+		int menu = 12;
+
+		while (menu != 0) {
+			System.out.println("Elige una de estas opciones: \n");
+			System.out.println("1.Pulsa '1' para añadir una cancion");
+			System.out.println("2.Pulsa '2' para obtener una cancion");
+			System.out.println("3.Pulsa '3' para ver el total de canciones");
+			System.out.println("3.Pulsa '4' para mostrar una Playlist");
+			System.out.println("4.Pulsa '5' para ver los que dura la Playlist");
+			System.out.println("5.Pulsa '6' para reproducir la Playlist");
+			System.out.println("6.Pulsa '7' para reproducir una cancion");
+			System.out.println("7.Pulsa '8' para borrar toda la Playlist");
+			System.out.println("8.Pulsa '9' para eliminar una cancion");
+			System.out.println("9.Pulsa '10' para encontrar cancion por titulo");
+			System.out.println("10.Pulsa '11' para encontrar cancion por artista");
+			System.out.println("12.Pulsa '0' para salir");
+			menu = sc.nextInt();
+			if (menu == 1) {
+				miPlaylist.anyadirCancion(nuevaCancion);
+				System.out.println("Perfecto, has añadido una nueva cancion a tu Playlist");
+			} else if (menu == 2) {
+				miPlaylist.obtieneCancion(2);
+				System.out.println("Aqui tienes la cancion que buscabas" + miPlaylist.obtieneCancion(0));
+			} else if (menu == 3) {
+				miPlaylist.obtieneTotalCanciones();
+			} else if (menu == 4) {
+				System.out.println("El nombre de la Playlist es: " + miPlaylist.getNombre() + "\n");
+			} else if (menu == 5) {
+				miPlaylist.totalDuracionPlaylist();
+				System.out.println("Tu Playlist dura: " + miPlaylist.totalDuracionPlaylist() + " minutos");
+			} else if (menu == 6) {
+				miPlaylist.reproducirPlaylist();
+				System.out.println();
+			} else if (menu == 7) {
+
+			} else if (menu == 8) {
+				miPlaylist.limpiarPlaylist();
+				System.out.println("Lista vacia");
+
+			} else if (menu == 9) {
+				int posicion = 3;
+				miPlaylist.eliminarCancion(posicion);
+			} else if (menu == 10) {
+				miPlaylist.encontrarCancionPorTitulo(null);
+			} else if (menu == 11) {
+				miPlaylist.encontrarCancionPorTitulo(null);
+			} else if (menu == 12) {
+
 			}
-		} while (opcion != 12);
-		
-
-
+		}
 	}
-
-
-
-	/* metodo para añadir canciones a la playlist
-	public static void anyadirCancion(ArrayList<Cancion> Canciones) {
-		Scanner sc = new Scanner(System.in);
-		Cancion nuevacancion = new Cancion();
-		System.out.println("Añade una cancion a tu Playlist");
-		System.out.println("¿Cuál es su titulo?");
-		nuevacancion.setTitulo(sc.next());
-		System.out.println("¿Cuál es su artista?");
-		nuevacancion.setArtista(sc.next());
-		System.out.println("¡Perfecto! Acabas de añadir una nueva cancion a tu Playlist");
-	
-	}
-
 }
