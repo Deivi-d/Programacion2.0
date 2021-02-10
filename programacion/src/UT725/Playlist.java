@@ -43,8 +43,8 @@ public class Playlist {
 	// metodos de la clase playlist
 	// metodo para añadir una cancion al arraylist que devuelve una cancion
 	public void anyadirCancion(Cancion c) {
-
-		canciones.add(c);
+		Cancion a = new Cancion(c.getTitulo(), c.getArtista(), c.getDuracionMinutos());
+		canciones.add(a);
 
 	}
 
@@ -106,28 +106,52 @@ public class Playlist {
 
 		} else
 			;
-		return false;
+		return true;
 
 	}
 
+	// metodo para encontrar posicion de la cancion por su titulo pasando por todo
+	// el arraylist hasta que
+	// encuentra una coindidencia con el titulo
 	public String encontrarCancionPorTitulo(String nombre) {
-		int posicioncancion=-1;
+		int posicioncancion = -1;
 		String busqueda;
 		for (int i = 0; i < canciones.size(); i++) {
-			if(canciones.);
+			if (canciones.get(i).getTitulo().equals(nombre))
+				;
 			posicioncancion = i;
-			
-		}if(posicioncancion==-1){
-			busqueda = "La cancion no existe en la lista";
-		}else {
-			busqueda = "La cancion " + nombre + " Existe en la posicion: " + posicioncancion; 
-		}
-			return busqueda;
-		}
-		
 
+		}
+		if (posicioncancion == -1) {
+			busqueda = "La cancion no existe en la lista";
+		} else {
+			busqueda = "La cancion " + nombre + " Existe en la posicion: " + posicioncancion;
+		}
+		return busqueda;
+	}
+
+	//
 	public String encontrarCancionesPorArtista(String artista) {
-		return artista;
+		String[] cancionesDelArtista = new String[canciones.size()];
+		String busqueda;
+		int contador = 0;
+		for (int i = 0; i < canciones.size(); i++) {
+			if (canciones.get(i).getArtista().equalsIgnoreCase(artista)) {
+				cancionesDelArtista[contador] = canciones.get(i).getTitulo();
+				contador += 1;
+			}
+		}
+		busqueda = "Las canciones del artista " + artista + " que hay en la lista son : ";
+		for (int i = 0; i < contador; i++) {
+			if (i != contador - 1) {
+				busqueda += cancionesDelArtista[i] + ", ";
+			} else {
+				busqueda += cancionesDelArtista[i] + ". ";
+			}
+
+		}
+
+		return busqueda;
 
 	}
 

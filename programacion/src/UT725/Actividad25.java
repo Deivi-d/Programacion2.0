@@ -67,7 +67,7 @@ public class Actividad25 {
 					System.out.println("Aqui tienes la cancion que buscabas" + miPlaylist.obtieneCancion(posicion_cancion));
 					break;
 				case 3:
-					System.out.println("Hay " + miPlaylist.obtieneTotalCanciones() + " en total");
+					System.out.println("Hay " + miPlaylist.obtieneTotalCanciones() + " canciones en total");
 					break;
 				case 4:
 					System.out.println("El nombre de la Playlist es: " + miPlaylist.getNombre() + "\n");
@@ -101,8 +101,9 @@ public class Actividad25 {
 					break;
 				case 11:
 					Scanner st = new Scanner(System.in);
+					System.out.println("Dime el autor de la cancion que deseas buscar");
 					String artista_cancion = st.next();
-					miPlaylist.encontrarCancionesPorArtista(artista_cancion);
+					System.out.println(miPlaylist.encontrarCancionesPorArtista(artista_cancion));
 					break;
 
 				}
