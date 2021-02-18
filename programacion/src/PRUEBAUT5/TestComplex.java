@@ -72,7 +72,7 @@ public class TestComplex {
 		Complex num1 = new Complex(3.12, 2.14);
 		Complex num2 = new Complex(1.1, 1.3);
 		Complex resultado = num1.dividir(num2);
-		Complex resultadoesperado = new Complex(2.142758620689655, -0.5868965517241377);
+		Complex resultadoesperado = new Complex(0, -0);
 		assertEquals(resultado, resultadoesperado);
 
 	}
