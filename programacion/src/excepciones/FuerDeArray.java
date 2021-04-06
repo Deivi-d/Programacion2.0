@@ -35,7 +35,7 @@ public class FuerDeArray {
 				System.out.println(" valor incorrecto para un indice");
 				System.out.println("ha ocurrido una exception " + ie.toString());
 			} finally {
-				System.out.println("En el finally");
+				//System.out.println("En el finally"); --> para comprobar que entra en el finally
 				sc = new Scanner(System.in);
 			}
 
